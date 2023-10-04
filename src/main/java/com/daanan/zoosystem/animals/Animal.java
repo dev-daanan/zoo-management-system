@@ -7,6 +7,5 @@ public abstract class Animal {
 
     abstract void movement();
     abstract void sound();
-    abstract Animal reproduce();
     abstract void consume();
 }
