@@ -8,11 +8,15 @@ public class Staff {
     String shift;
     ArrayList<String> duties;
 
-    public Staff(String name) {
+    public Staff(String name, String position, String shift, ArrayList<String> duties) {
         this.name = name;
-        this.position = "";
-        this.shift = "";
-        this.duties = new ArrayList<>();
+        this.position = position;
+        this.shift = shift;
+        this.duties = duties;
+    }
+
+    public Staff(String name) {
+        this(name, "General Labourer", "TBD", new ArrayList<>());
     }
 
     /**
@@ -23,8 +27,10 @@ public class Staff {
         shift = shift.toLowerCase();
         if ("day".equals(shift)) {
             this.shift = shift;
+            System.out.println(name + "has been assigned to day shift.");
         } else if ("night".equals(shift)) {
             this.shift = shift;
+            System.out.println(name + " has been assigned to night shift.");
         } else {
             System.out.println("Invalid Assignment.\n" +
                     "There are only two shifts available: Day or Night");
@@ -33,7 +39,7 @@ public class Staff {
 
     // Assign specific duties/tasks to staff members
     public void assignDuty(String task) {
-        System.out.println(name + " was assigned to perform task: " + task);
+        System.out.println(name + " was assigned to task: \"" + task + "\"");
         duties.add(task);
     }
 
@@ -42,12 +48,33 @@ public class Staff {
         duties.remove(duties.size() - 1);
     }
 
+    public void work(int index) {
+        index--;
+        System.out.println(name + " has performed task: " + duties.get(index));
+        duties.remove(index);
+    }
+
     public void printDuties() {
+        int index = 1;
         System.out.println("-".repeat(50));
-        System.out.println(name + " duties are listed below:");
+        System.out.println(name + "'s duties are listed below:");
         for (String duty : duties) {
-            System.out.println("- " + duty);
+            System.out.println(index + ": " + duty);
+            index++;
         }
         System.out.println("-".repeat(50));
     }
+
+    public void printDetails() {
+        System.out.println(
+                "Details on: " + name +
+                        "\nposition: " + position +
+                        "\nshift: " + shift
+
+        );
+        printDuties();
+
+    }
+
+
 }

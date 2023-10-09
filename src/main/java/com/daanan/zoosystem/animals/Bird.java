@@ -1,18 +1,26 @@
 package src.main.java.com.daanan.zoosystem.animals;
 
 public class Bird  extends Animal implements Flyable {
+    public Bird(String name, int age, double weight) {
+        super(name, age, weight);
+    }
+
+    public Bird(String name) {
+        super(name);
+    }
+
     @Override
     public void movement() {
         System.out.println("The Bird Hops Along.");
     }
 
     @Override
-    void sound() {
+    public void sound() {
         System.out.println("Tweet Tweet Tweet!");
     }
 
     @Override
-    void consume() {
+    public void consume() {
         System.out.println("*peck*  *peck*  *peck*, bugs are tasty.");
     }
 

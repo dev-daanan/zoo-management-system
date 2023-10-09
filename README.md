@@ -9,6 +9,3 @@ Identify Classes & Relationships
     Relationships: Recognize inheritance (animal sub-types from Animal), 
     and associations (staff-management, animal-care).
 
-TODOs: 
-    Change Staff duties from Array List to Linked List to enable removeFirstNode without the change from O(1) to O(n)
-    
