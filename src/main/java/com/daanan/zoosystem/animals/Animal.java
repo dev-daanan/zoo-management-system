@@ -5,7 +5,7 @@ public abstract class Animal {
     int age;
     double weight;
 
-    abstract void movement();
+    abstract public void movement();
     abstract void sound();
     abstract void consume();
 }

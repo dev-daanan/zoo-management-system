@@ -1,8 +1,8 @@
 package src.main.java.com.daanan.zoosystem.animals;
 
-public class Bird  extends Animal implements flyable{
+public class Bird  extends Animal implements Flyable {
     @Override
-    void movement() {
+    public void movement() {
         System.out.println("The Bird Hops Along.");
     }
 

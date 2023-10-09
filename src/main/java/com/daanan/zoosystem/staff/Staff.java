@@ -15,7 +15,10 @@ public class Staff {
         this.duties = new ArrayList<>();
     }
 
-    // Assign staff to particular shifts
+    /**
+     * Assign staff to particular shifts
+     * Options: day, night
+     */
     public void assignShift(String shift) {
         shift = shift.toLowerCase();
         if ("day".equals(shift)) {
@@ -30,14 +33,21 @@ public class Staff {
 
     // Assign specific duties/tasks to staff members
     public void assignDuty(String task) {
-        System.out.println(name + " was assigned to perform task(s): " + task);
+        System.out.println(name + " was assigned to perform task: " + task);
         duties.add(task);
     }
 
     public void work() {
-        System.out.println(name + " has performed task(s): " + duties.get(duties.size() - 1));
+        System.out.println(name + " has performed task: " + duties.get(duties.size() - 1));
         duties.remove(duties.size() - 1);
     }
 
-
+    public void printDuties() {
+        System.out.println("-".repeat(50));
+        System.out.println(name + " duties are listed below:");
+        for (String duty : duties) {
+            System.out.println("- " + duty);
+        }
+        System.out.println("-".repeat(50));
+    }
 }

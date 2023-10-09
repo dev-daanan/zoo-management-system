@@ -2,7 +2,7 @@ package src.main.java.com.daanan.zoosystem.animals;
 
 public class Elephant extends Animal {
     @Override
-    void movement() {
+    public void movement() {
         System.out.println("The Elephant Slowly Walks.");
     }
 
